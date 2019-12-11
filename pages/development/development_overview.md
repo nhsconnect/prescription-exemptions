@@ -13,7 +13,7 @@ summary: "Overview for developers on how to integrate with the Real Time Exempti
 
 Integrating systems must meet the client requirements listed below:
 
-* [Real Time Exemption Checking Service - Client Functional Requirements v1.2](downloads/development/Real Time Exemption Checking Service - Client Functional Requirements v1.2.pdf)
+* [Real Time Exemption Checking Service - Client Functional Requirements v1.3](downloads/development/Real Time Exemption Checking Service - Client Functional Requirements v1.3.pdf)
 
 * [Real Time Exemption Checking Service - Client Non Functional Requirements v1.0](downloads/development/Real Time Exemption Checking Service - Client Non-Functional Requirements v1.0.pdf)
 
