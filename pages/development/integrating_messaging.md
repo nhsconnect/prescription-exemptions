@@ -7,36 +7,16 @@ permalink: integrating_messaging.html
 summary: How to integrate information from the Real Time Exemption Checking Service API with EPS Prescription messaging
 ---
 
-Once an exemption has been confirmed by a prescription exemption check this confirmation needs to be reflected in the reimbursement claim message for EPS prescriptions. This is done using an extended version of the  *PrescriptionChargeExemption* vocabulary, which includes values which may be returned by a prescription exemption check. Where the patient wishes to claim a different exemption not confirmed by the prescription exemption checking service, then the appropriate value not confirmed by source must be included in the claim message.
+The existing EPS claim message is to be used when submitting reimbursement messages with exemptions confirmed by the Real Time Exemption Checking service. In order to differentiate patient exemptions confirmed by the service, additional EPS values must be used for indicating patient prescription charge exemption. Information on the values used within the Real Time Exemption Checking service can be found below. Where the patient wishes to claim a different exemption not confirmed by the service, suppliers should utilise existing exemption values as part of the EPS process. Information on existing EPS values can be found within the NHSBSA `Requirements and Guidance for Endorsement in EPS`: [https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/prescribing-and-dispensing/endorsement-guidance](https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/prescribing-and-dispensing/endorsement-guidance)
 
-## *PrescriptionChargeExemption* vocabulary
+## RTEC EPS Values ##
 
 The following vocabulary must be used in EPS claim messages.
 
-
-| *Version:*	| 03    |
-| *Date:*	    | 13 June 18  |
-
-
 | Value	| Description	| Note  |
 | ----- | ----------- | ------|
-| `0001`	| Patient has paid appropriate charges	 | |
-| `0002`	| is under 16 years of age	 | |
-| `0003`	| is 16, 17 or 18 and in full-time education	 | |
-| `0004`	| is 60 years of age or over	 | |
-| `0005`	| has a valid maternity exemption certificate	 | |
-| `0006`	| has a valid medical exemption certificate	 | |
-| `0007`	| has a valid prescription pre-payment certificate	 | |
-| `0008`	| has a War Pension exemption certificate	 | |
-| `0009`	| is named on a current HC2 charges certificate	 | |
-| `0010`	| was prescribed free-of-charge contraceptives	 | |
-| `0011`	| gets income support (IS)	 | |
-| `0012`	| gets income based Job Seeker's Allowance (JSA (IB))	 | |
-| `0013`	| is entitled to, or named on a VALID NHS tax credit exemption certificate	 |
-| `0015` | Patient does not need to pay the prescription charge	| This allows the exemption status to be recorded without actually stating the reason for the exemption.|
-| `0016` | gets Universal Credit (and meets eligibility criteria)
-| `9005`	| has a valid maternity exemption certificate - confirmed by RTEC source	 | For this exemption code, the maternity exemption type must also be displayed to the end user. |
-| Any other value | Patient does not need to pay the prescription charge - confirmed by RTEC source	| This allows the exemption status to be confirmed without actually stating the reason for the exemption. E.G '9999' |
+|`9005`| has a valid maternity exemption certificate - confirmed by RTEC source | This is a future proof requirement to ensure systems can display the exemption type if this was provided by the NHSBSA in the RTEC response. |
+| Any other 9xxx value receieved by BSA in an RTEC confirmed response | Patient does not need to pay the prescription charge - confirmed by RTEC source	| This allows the exemption status to be confirmed without actually stating the reason for the exemption. E.G '9999' |
 
 
 ## Exemption Type in the EPS Claim message ##

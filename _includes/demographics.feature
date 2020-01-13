@@ -40,27 +40,17 @@ Scenario: Non synced patients not able to be checked
 	Then the system will prevent the a request being made
 	
 @PEC-FR-6
-Scenario: Informally deceased patients not able to be checked
+Scenario: Deceased patients not able to be checked
 	As a Dispenser at a HealthCare Organisation
 	I would like to be able to carry out a prescription exemption check
 	So that the prescription medication can be dispensed with at the appropriate 
 	Given that the Dispenser would like to carry out an exemption check
-	And the Patient is recorded as informally deceased
+	And the Patient is recorded as deceased
 	When the dispenser requests to carry out an exemption check
 	Then the system will prevent the a request being made 
 	
-@PEC-FR-6
-Scenario: Formally deceased patients not able to be checked
-	As a Dispenser at a HealthCare Organisation
-	I would like to be able to carry out a prescription exemption check
-	So that the prescription medication can be dispensed with at the appropriate 
-	Given that the Dispenser would like to carry out an exemption check
-	And the Patient is recorded as formally deceased
-	When the dispenser requests to carry out an exemption check
-	Then the system will prevent the a request being made
-	
 @PEC-FR-7
-Scenario: Sensitive flagged patients not able to be checked
+Scenario: Sensitive flagged patients not able to be checked (where flag available in system)
 	As a Dispenser at a HealthCare Organisation
 	I would like to be able to carry out a prescription exemption check
 	So that the prescription medication can be dispensed with at the appropriate 

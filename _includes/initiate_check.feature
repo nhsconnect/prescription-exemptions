@@ -19,7 +19,7 @@ Scenario: patient 60 or over
 	Then the system will prevent a check being made 
 	
 @PEC-FR-21
-Scenario: Patient a prisoner on release
+Scenario: Patient a prisoner on release (when EPS is available for prisoners on release)
 	As a Dispenser at a Healthcare Organisation
 	I would like to not carry out a prescripiton exemption check for patients who have automatic exemption
 	So that the dispensing process is faster
